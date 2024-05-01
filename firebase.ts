@@ -12,24 +12,24 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
 // เชื่อมต่อกับ Firestore
-const db: Firestore = getFirestore(app);
+export const db: Firestore = getFirestore(app);
 
-// ดึงข้อมูล document จาก collection
-const docRef = doc(collection(db, 'student'), '6512345678');
+// // ดึงข้อมูล document จาก collection
+// const docRef = doc(collection(db, 'student'), '6512345678');
 
-getDoc(docRef)
-  .then((docSnap) => {
-    if (!docSnap.exists()) {
-      console.log('ไม่พบเอกสาร!');
-    } else {
-      console.log('ข้อมูลเอกสาร:', docSnap.data());
-    }
-  })
-  .catch((err) => {
-    console.error('เกิดข้อผิดพลาดในการดึงข้อมูล:', err);
-  });
+// getDoc(docRef)
+//   .then((docSnap) => {
+//     if (!docSnap.exists()) {
+//       console.log('ไม่พบเอกสาร!');
+//     } else {
+//       console.log('ข้อมูลเอกสาร:', docSnap.data());
+//     }
+//   })
+//   .catch((err) => {
+//     console.error('เกิดข้อผิดพลาดในการดึงข้อมูล:', err);
+//   });
 
-export { app };
+// export { app };

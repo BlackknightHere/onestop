@@ -1,29 +1,21 @@
-import React, { useState } from 'react'
-import MenuTab from '../components/MenuTab'
-import MenuSection from '../components/Menusection'
+import React, { useState } from 'react';
+import MenuTab from '../components/MenuTab';
+import MenuSection from '../components/Menusection';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../../firebase';
 
-const page = async () => {
-    const docRef = doc(db, "student", "6512345678");
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-        // const data = docSnap.data();
-        // console.log("Document data:", docSnap.data());
+interface Props {
+    // Define props interface here if needed
+}
 
-    } else {
-        console.log("No Such Document!");
-    }
+const Home: React.FC<Props> = async () => {
+    // Component logic here
+    
 
-    const student = docSnap.data();
-    try {
-        const sid = student.id;
-        const name = student.name;
-        const major = student.major;
-        // ใช้ sid, name, major ต่อไป
-    } catch {
-        console.log("Data is undefined");
-    }
+    const name = "kuay"
+    const STID = "6522222222"
+    const major = "KFC";
+
     return (
         <div>
             <a href="/profile/profile_detail">
@@ -31,7 +23,7 @@ const page = async () => {
                     <img src="profile.png" className="ml-2 mt-1 mr-4" alt="Profile Picture" />
                     <div className="flex-grow">
                         <h3 className="font-inter text-black text-xl ">{name}</h3>
-                        <p className="font-inter text-black text-sm">{sid}</p>
+                        <p className="font-inter text-black text-sm">{STID}</p>
                         <p className="text-black text-sm font-inter">{major}</p>
                     </div>
                 </div>
@@ -73,9 +65,10 @@ const page = async () => {
 
             <div className=''>
                 <MenuTab />
+
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default page
+export default Home;
