@@ -8,7 +8,7 @@ interface Props {
 
 const Home: React.FC<Props> = () => {
     // Component logic here
-    const name = "Sabig Benmumin";
+    const name = "Yipsee Roram";
     const STID = "6522222222"
     const major = "KFC";
 
