@@ -1,8 +1,12 @@
 export default function Home() {
-
+  // const handleSubmit = () => {
+  //   // e.preventDefault();
+  //   console.log("login pressed")
+  // }
   return (
     <main>
       <form 
+      // onSubmit={handleSubmit}
       action="/profile" 
       className="flex flex-col ">
         <input

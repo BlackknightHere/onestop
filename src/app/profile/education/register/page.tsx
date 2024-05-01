@@ -7,7 +7,7 @@ return(
 <main>
     <div className='flex ml-5 mt-20'>
         <a href="/profile/education">
-            <img src="/back.png" alt="back" width={40} height={30} className='' />
+            <img src="/left.png" alt="back" width={40} height={30} className='' />
         </a>
         <h1 className='font-bold text-2xl mt-1'>ลงทะเบียนเรียน</h1>
     </div>

@@ -15,15 +15,30 @@ const page = async () => {
         console.log("No Such Document!");
     }
 
+    // const student = docSnap.data();
+    // try {
+    //     const sid = student.id;
+    //     const name = student.name;
+    //     const major = student.major;
+    //     // ใช้ sid, name, major ต่อไป
+    // } catch {
+    //     console.log("Data is undefined");
+    // }
+
+    let sid: string | undefined;
+    let name: string | undefined;
+    let major: string | undefined;
+
     const student = docSnap.data();
-    try {
-        const sid = student.id;
-        const name = student.name;
-        const major = student.major;
-        // ใช้ sid, name, major ต่อไป
-    } catch {
+    if (student) {
+        sid = student.id;
+        name = student.name;
+        major = student.major;
+        // You can use sid, name, major here
+    } else {
         console.log("Data is undefined");
     }
+
     return (
         <div>
             <a href="/profile/profile_detail">
